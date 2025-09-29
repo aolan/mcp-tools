@@ -19,18 +19,18 @@ const MY_TOOLS = [START_WORK, END_WORK];
 const start_work = async () => {
     const content = [];
     try {
-        // 开启 MonoProxy
+        // 开启 MonoProxyMac
         try {
-            execSync('open -a MonoProxy', { stdio: 'ignore' });
+            execSync('open -a MonoProxyMac', { stdio: 'ignore' });
             content.push({
                 type: "text",
-                text: "MonoProxy 已开启"
+                text: "MonoProxyMac 已开启"
             });
 
         } catch (error) {
             content.push({
                 type: "text",
-                text: `开启 MonoProxy 失败，原因为: ${error.message}`
+                text: `开启 MonoProxyMac 失败，原因为: ${error.message}`
             });
         }
         
@@ -51,7 +51,7 @@ const start_work = async () => {
         
         // 开启飞书
         try {
-            execSync('open -a 飞书', { stdio: 'ignore' });
+            execSync('open -a Lark', { stdio: 'ignore' });
             content.push({
                 type: "text",
                 text: "飞书已开启"
