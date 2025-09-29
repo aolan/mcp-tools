@@ -9,13 +9,16 @@
 
 该工具包提供以下自动化功能：
 
+### start_work 命令
+- 开启 MonoProxy
+- 开启 iTerm
+- 开启飞书
+- 开启 Android Studio
+
+### end_work 命令
 - 关闭 Android Studio
 - 关闭 iTerm
 - 弹出挂载在 `/Volumes/alan` 的移动硬盘
-
-提供两个主要工具命令：
-- `start_work`: 开始一天的工作（当前与 end_work 功能相同）
-- `end_work`: 结束一天的工作，自动清理工作环境
 
 ## 安装
 
@@ -24,14 +27,10 @@
 可以直接通过 npx 运行，无需安装：
 
 ```bash
-npx -y @mcp/tools
+npx -y github:aolan/mcp-tools
 ```
 
-### 全局安装
 
-```bash
-npm install -g @mcp/tools
-```
 
 ## 使用方法
 
@@ -46,27 +45,11 @@ npm install -g @mcp/tools
       "command": "npx",
       "args": [
         "-y",
-        "@mcp/tools"
+        "github:aolan/mcp-tools"
       ]
     }
   }
 }
-```
-
-### 直接运行
-
-安装后，您也可以直接在终端中运行：
-
-```bash
-mcp-tools
-```
-
-## 开发
-
-要构建项目，请运行：
-
-```bash
-npm run build
 ```
 
 ## 许可证
