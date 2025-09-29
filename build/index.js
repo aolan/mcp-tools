@@ -19,53 +19,66 @@ const MY_TOOLS = [START_WORK, END_WORK];
 async function start_work() {
     var content = []
     try {
-        // 关闭 Android Studio
+        // 开启 MonoProxy
         try {
-            execSync('pkill -f "Android Studio"', { stdio: 'ignore' });
+            execSync('open -a MonoProxy', { stdio: 'ignore' });
             content.push({
                 type: "text",
-                text: "Android Studio 已关闭"
+                text: "MonoProxy 已开启"
             })
 
         } catch (error) {
             content.push({
                 type: "text",
-                text: "Android Studio 关闭失败，原因为: ${error.message}"
+                text: "开启 MonoProxy 失败，原因为: ${error.message}"
             })
-            return { content, isError: true }
         }
-
-        // 关闭 iTerm
+        
+        // 开启 iTerm
         try {
-            execSync('pkill -f "iTerm"', { stdio: 'ignore' });
+            execSync('open -a iTerm', { stdio: 'ignore' });
             content.push({
                 type: "text",
-                text: "iTerm 已关闭"
+                text: "iTerm 已开启"
             })
 
         } catch (error) {
             content.push({
                 type: "text",
-                text: "iTerm 关闭失败，原因为: ${error.message}"
+                text: "开启 iTerm 失败，原因为: ${error.message}"
             })
-            return { content, isError: true }
         }
-
-        // 弹出移动硬盘
+        
+        // 开启飞书
         try {
-            execSync('diskutil eject /Volumes/alan', { stdio: 'ignore' });
+            execSync('open -a 飞书', { stdio: 'ignore' });
             content.push({
                 type: "text",
-                text: "移动硬盘已弹出"
+                text: "飞书已开启"
             })
 
         } catch (error) {
             content.push({
                 type: "text",
-                text: "弹出移动硬盘失败，原因为: ${error.message}"
+                text: "开启飞书失败，原因为: ${error.message}"
             })
-            return { content, isError: true }
         }
+        
+        // 开启 Android Studio
+        try {
+            execSync('open -a "Android Studio"', { stdio: 'ignore' });
+            content.push({
+                type: "text",
+                text: "Android Studio 已开启"
+            })
+
+        } catch (error) {
+            content.push({
+                type: "text",
+                text: "开启 Android Studio 失败，原因为: ${error.message}"
+            })
+        }
+        
         return { content, isError: false }
 
     } catch (error) {
