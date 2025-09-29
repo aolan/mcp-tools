@@ -22,13 +22,13 @@ async function start_work() {
         // 关闭 Android Studio
         try {
             execSync('pkill -f "Android Studio"', { stdio: 'ignore' });
-            content.append({
+            content.push({
                 type: "text",
                 text: "Android Studio 已关闭"
             })
 
         } catch (error) {
-            content.append({
+            content.push({
                 type: "text",
                 text: "Android Studio 关闭失败，原因为: ${error.message}"
             })
@@ -38,13 +38,13 @@ async function start_work() {
         // 关闭 iTerm
         try {
             execSync('pkill -f "iTerm"', { stdio: 'ignore' });
-            content.append({
+            content.push({
                 type: "text",
                 text: "iTerm 已关闭"
             })
 
         } catch (error) {
-            content.append({
+            content.push({
                 type: "text",
                 text: "iTerm 关闭失败，原因为: ${error.message}"
             })
@@ -54,13 +54,13 @@ async function start_work() {
         // 弹出移动硬盘
         try {
             execSync('diskutil eject /Volumes/alan', { stdio: 'ignore' });
-            content.append({
+            content.push({
                 type: "text",
                 text: "移动硬盘已弹出"
             })
 
         } catch (error) {
-            content.append({
+            content.push({
                 type: "text",
                 text: "弹出移动硬盘失败，原因为: ${error.message}"
             })
@@ -69,7 +69,7 @@ async function start_work() {
         return { content, isError: false }
 
     } catch (error) {
-        content.append({
+        content.push({
             type: "text",
             text: `执行失败: ${error.message}`
         })
@@ -83,13 +83,13 @@ async function end_work() {
         // 关闭 Android Studio
         try {
             execSync('pkill -f "Android Studio"', { stdio: 'ignore' });
-            content.append({
+            content.push({
                 type: "text",
                 text: "Android Studio 已关闭"
             })
 
         } catch (error) {
-            content.append({
+            content.push({
                 type: "text",
                 text: "Android Studio 关闭失败，原因为: ${error.message}"
             })
@@ -99,13 +99,13 @@ async function end_work() {
         // 关闭 iTerm
         try {
             execSync('pkill -f "iTerm"', { stdio: 'ignore' });
-            content.append({
+            content.push({
                 type: "text",
                 text: "iTerm 已关闭"
             })
 
         } catch (error) {
-            content.append({
+            content.push({
                 type: "text",
                 text: "iTerm 关闭失败，原因为: ${error.message}"
             })
@@ -115,13 +115,13 @@ async function end_work() {
         // 弹出移动硬盘
         try {
             execSync('diskutil eject /Volumes/alan', { stdio: 'ignore' });
-            content.append({
+            content.push({
                 type: "text",
                 text: "移动硬盘已弹出"
             })
 
         } catch (error) {
-            content.append({
+            content.push({
                 type: "text",
                 text: "弹出移动硬盘失败，原因为: ${error.message}"
             })
@@ -130,7 +130,7 @@ async function end_work() {
         return { content, isError: false }
 
     } catch (error) {
-        content.append({
+        content.push({
             type: "text",
             text: `执行失败: ${error.message}`
         })
